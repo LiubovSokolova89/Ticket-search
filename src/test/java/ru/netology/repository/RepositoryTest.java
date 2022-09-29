@@ -30,7 +30,7 @@ public class RepositoryTest {
         repo.addTicket(ticket5);
         repo.addTicket(ticket6);
         repo.addTicket(ticket7);
-
+        repo.addTicket(ticket8);
     }
 
 
@@ -45,7 +45,8 @@ public class RepositoryTest {
                 ticket4,
                 ticket5,
                 ticket6,
-                ticket7
+                ticket7,
+                ticket8
         };
 
         Assertions.assertArrayEquals(expected, actual);
@@ -54,19 +55,20 @@ public class RepositoryTest {
     @Test
     public void shouldFindAll() {
 
-        Ticket[] expected = {ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket7,};
+        Ticket[] expected = {ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8};
         Ticket[] actual = repo.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void shouldAdd() {
-        repo.addTicket(ticket8);
-        Ticket[] expected = {ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8,};
-        Ticket[] actual = repo.findAll();
+    public void shouldFindById() {
+        Ticket expected = ticket3;
+        Ticket actual = repo.findById(3);
 
-        Assertions.assertArrayEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
+
+
     }
 
 
