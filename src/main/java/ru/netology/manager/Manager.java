@@ -15,6 +15,7 @@ public class Manager {
     public void addTicket(Ticket ticket) {
         repo.addTicket(ticket);
     }
+
     public void removeById(int id) {
         repo.removeById(id);
     }
@@ -22,7 +23,7 @@ public class Manager {
     public Ticket[] findAll(String airportFrom, String airportTo) {
         Ticket[] result = new Ticket[0];
         for (Ticket ticket : repo.findAll()) {
-            if (matches(ticket , airportFrom, airportTo)) {
+            if (matches(ticket, airportFrom, airportTo)) {
                 Ticket[] tmp = new Ticket[result.length + 1];
                 for (int i = 0; i < result.length; i++) {
                     tmp[i] = result[i];
@@ -36,8 +37,8 @@ public class Manager {
     }
 
     public boolean matches(Ticket ticket, String airportFrom, String airportTo) {
-        if (ticket.getAirportFrom() .equals(airportFrom)) {
-            if (ticket.getAirportTo() .equals(airportTo)) {
+        if (ticket.getAirportFrom().equals(airportFrom)) {
+            if (ticket.getAirportTo().equals(airportTo)) {
                 return true;
             }
         }

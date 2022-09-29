@@ -16,15 +16,15 @@ public class Repository {
     }
 
     public void removeById(int id) {
-      Ticket[] tmp = new Ticket[tickets.length -1];
-      int copyToIndex = 0;
-      for (Ticket ticket : tickets) {
-          if (ticket.getId() != id) {
-              tmp[copyToIndex] = ticket;
-              copyToIndex++;
-          }
-      }
-      tickets = tmp;
+        Ticket[] tmp = new Ticket[tickets.length - 1];
+        int copyToIndex = 0;
+        for (Ticket ticket : tickets) {
+            if (ticket.getId() != id) {
+                tmp[copyToIndex] = ticket;
+                copyToIndex++;
+            }
+        }
+        tickets = tmp;
     }
 
     public Ticket findById(int id) {
